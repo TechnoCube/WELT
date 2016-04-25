@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WELT</string>
+    <string name="throttle">Throttle</string>
+    <string name="increment">Increment</string>
+    <string name="decrement">Decrement</string>
+    <string name="stop">STOP</string>
+    <string name="velocity">Velocity</string>
+    <string name="battery_voltage">Battery Voltage</string>
+    <string name="volts">volts</string>
+    <string name="km_h">km/h</string>
+</resources>
