@@ -8,4 +8,6 @@
     <string name="battery_voltage">Battery Voltage</string>
     <string name="volts">volts</string>
     <string name="km_h">km/h</string>
+    <string name="connection_status">Connection Status</string>
+    <string name="exit">Exit</string>
 </resources>

@@ -10,37 +10,44 @@
     tools:context="com.example.technocube.welt.MainActivity">
 
     <ProgressBar
-        style="?android:attr/progressBarStyleLarge"
+        style="@style/Widget.ProgressBar.Vertical"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/throttle_indicator"
+        android:max="10"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:indeterminate="false" />
+        android:indeterminate="false"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/increment"
         android:id="@+id/inc_button"
+        android:onClick="incThrottleListener"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="89dp"
-        android:layout_toRightOf="@+id/throttle_indicator"
-        android:layout_toEndOf="@+id/throttle_indicator" />
+        android:layout_toEndOf="@+id/throttle_text"
+        android:layout_alignLeft="@+id/stop_button"
+        android:layout_alignStart="@+id/stop_button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/decrement"
         android:id="@+id/dec_button"
+        android:onClick="decThrottleListener"
         android:layout_marginBottom="43dp"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/inc_button"
         android:layout_alignEnd="@+id/inc_button"
-        android:layout_toRightOf="@+id/throttle_indicator"
-        android:layout_toEndOf="@+id/throttle_indicator" />
+        android:layout_toEndOf="@+id/throttle_text"
+        android:layout_alignLeft="@+id/inc_button"
+        android:layout_alignStart="@+id/inc_button" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -48,10 +55,12 @@
         android:layout_height="wrap_content"
         android:text="@string/stop"
         android:id="@+id/stop_button"
+        android:onClick="stopThrottleListener"
         android:layout_above="@+id/inc_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/throttle_indicator"
-        android:layout_alignRight="@+id/inc_button"
-        android:layout_alignEnd="@+id/inc_button" />
+        android:layout_toEndOf="@+id/throttle_indicator" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -98,7 +107,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="37dp"
         android:layout_toStartOf="@+id/throttle_indicator"
-        android:layout_toLeftOf="@+id/throttle_indicator" />
+        android:layout_alignRight="@+id/voltage_indicator"
+        android:layout_alignEnd="@+id/voltage_indicator" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -112,5 +122,28 @@
         android:text="@string/volts"
         android:layout_alignRight="@+id/velocity_indicator"
         android:layout_alignEnd="@+id/velocity_indicator" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/connection_status"
+        android:id="@+id/connection_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/inc_button"
+        android:layout_toLeftOf="@+id/throttle_indicator"
+        android:layout_toStartOf="@+id/throttle_indicator" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:id="@+id/exit_button"
+        android:onClick="exitListener"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
